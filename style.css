@@ -1,0 +1,681 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Меню */
+/* Общие стили для хедера */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+/* Логотип слева */
+.header .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+/* Стили для меню */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #f4f4f4;
+    border-bottom: solid 2px #0056b3;
+}
+
+/* Контактная информация (номер телефона) справа */
+.contact-info {
+    font-size: 1rem;
+    margin-right: 40px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #f4f4f4;
+}
+
+/* Гамбургер для мобильных устройств */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu a {
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .contact-info {
+        display: none; /* На мобильных устройствах номер будет скрыт */
+    }
+}
+
+/* Секции */
+section {
+    padding: 80px 20px; /* Убираем перекрытие меню */
+}
+
+/* Главное окно */
+.hero {
+    background: url(./img/bg.png);
+    opacity: 0.9;
+    color: #fff;
+    text-align: center;
+    height: 100vh; /* Занимает весь экран */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    width: 800px;
+    font-size: 70px;
+}
+
+.hero p {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Почему выбирают нас */
+.why-us {
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 35px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.feature {
+    margin: 10px;
+    text-align: center;
+    width: 295px;
+    border: solid 2px rgb(173, 173, 178);
+    border-radius: 5px;
+    padding: 15px;
+}
+.feature:hover {
+    border-top: solid 2px #044ad5;
+    box-shadow: 0px 4px 10px rgb(164, 150, 150);
+}
+
+.feature img {
+    max-width: 100px;
+    margin: 20px;
+}
+
+.feature h3 {
+    font-size: 25px;
+}
+
+.feature p {
+    font-size: 18px;
+}
+
+/* Готовые решения */
+.solutions {
+    background: #f9f9f9;
+    text-align: center;
+}
+.solutions h2 {
+    font-size: 35px;
+}
+.solutions p {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.solution-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.solution-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Адаптивность программы */
+.atap-text {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+}
+.adaptivity {
+    display: flex;
+    justify-content: center;
+}
+
+.adaptivity img {
+    width: 50%;
+    border-radius: 5px;
+}
+.adaptivity h3 {
+    font-size: 30px;
+}
+.adaptivity p {
+    font-size: 18px;
+}
+
+.adaptivity div {
+    width: 45%;
+}
+
+.adaptivity ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.adaptivity li {
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+/* Как мы работаем */
+.how-we-work {
+    background: #fff;
+    background-size: cover;
+    text-align: center;
+}
+.how-we-work h2 {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.steps {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.step {
+    text-align: center;
+    width: 250px;
+}
+.step p {
+    opacity: 0.7;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.step img {
+    max-width: 50px;
+    margin-bottom: 10px;
+    background-color: #044ad5;
+    border-radius: 100%;
+}
+/* Тарифы */
+
+/* Стили для раздела тарифов */
+.tariffs {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.tariffs h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.container h2 {
+    font-size: 30px;
+    margin: 0;
+}
+.container p {
+    font-size: 18px;
+}
+
+.tariff-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.tariff {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tariff:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tariff h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tariff p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.tariff ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.tariff ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tariff .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для выделенного тарифа */
+.tariff.featured {
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+/* Контакты */
+
+.contacts {
+padding: 40px 20px;
+background: #fff;
+}
+.contacts h3 {
+    font-size: 30px;
+    text-align: center;
+}
+.contacts h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.contacts .tab {
+margin-left: 20px;
+color: #333;
+}
+
+.info-block {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 40px;
+margin-bottom: 30px;
+flex-wrap: wrap;
+}
+
+.contact-details, .contact-links {
+flex: 1 1 300px;
+}
+
+.contact-links a {
+color: #e40000;
+text-decoration: none;
+}
+
+.social-icons a {
+display: inline-block;
+margin-right: 10px;
+margin-top: 10px;
+}
+
+.social-icons img {
+width: 32px;
+height: 32px;
+}
+
+.map iframe {
+width: 100%;
+height: 300px;
+border: none;
+}
+
+
+
+/* Обратная связь */
+
+.contact {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.container-form {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="tel"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button.cta-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.cta-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 2rem;
+    }
+}
+/* Адаптив контакты*/
+@media (max-width: 768px) {
+    .info-block {
+        flex-direction: column;
+    }
+    
+    .contacts h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .contacts .tab {
+        display: block;
+        margin-top: 5px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        text-align: left;
+    }
+    }
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .feature {
+        width: 80%;
+    }
+
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .adaptivity {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .adaptivity img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact input {
+        width: 80%;
+    }
+
+    .contact form {
+        width: 80%;
+    }
+}
+
+/* Адаптивность для мобильных устройств Тарифы */
+@media (max-width: 768px) {
+    .tariff-cards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tariff {
+        width: 100%;
+    }
+
+    .tariffs h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Для мобильных устройств меньшего размера Хедер */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .feature h3 {
+        font-size: 18px;
+    }
+
+    .feature p {
+        font-size: 14px;
+    }
+
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+    }
+}
+
+/* Исправление */
+.tel {
+    width: 30px;
+}
+.tell {
+    display: flex;
+    gap: 5px;
+}
+span {
+    border-bottom: solid 3px #044ad5;
+}
+.free-tarif {
+    display: flex;
+    align-items: center;
+}
+.free-tarifs {
+    width: 30px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.free-tarif h3 {
+    font-size: 27px;
+}
